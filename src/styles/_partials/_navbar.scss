@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: $base-color;
+    color: white;
+    padding: 1rem;
+    font-size: 2rem;
+    >div {
+        display: flex;
+        gap: .5rem;
+        svg {
+            transition: color 150ms;
+            &:hover {
+                color: $third-color;
+                cursor: pointer;
+            }
+        }
+    }
+}

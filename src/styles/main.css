@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap");
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -50,4 +55,79 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #645CBB;
+  color: white;
+  padding: 1rem;
+  font-size: 2rem;
+}
+.header > div {
+  display: flex;
+  gap: 0.5rem;
+}
+.header > div svg {
+  transition: color 150ms;
+}
+.header > div svg:hover {
+  color: #BFACE2;
+  cursor: pointer;
+}
+
+.hero__weather {
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  position: fixed;
+  height: 100vh;
+  padding: 2rem 1rem;
+  text-align: center;
+  background-color: #EBC7E6;
+  gap: 1rem;
+}
+.hero__weather .weather__title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.hero__weather .weather__title h1 {
+  color: #2c285a;
+  font-size: 2rem;
+}
+.hero__weather .weather__title h2 {
+  font-style: italic;
+  opacity: 0.8;
+}
+.hero__weather i {
+  font-size: 10rem;
+  color: #645CBB;
+}
+.hero__weather form {
+  display: flex;
+  place-content: center;
+  text-align: center;
+  position: relative;
+}
+.hero__weather form input {
+  background-color: #BFACE2;
+  padding: 0.5rem 1rem;
+  border: none;
+  color: #645CBB;
+}
+.hero__weather .weather__info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.hero__weather .weather__info > div {
+  color: #2c285a;
+  background-color: #BFACE2;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
 }/*# sourceMappingURL=main.css.map */

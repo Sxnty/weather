@@ -6,11 +6,10 @@ function App() {
   /* https://api.openweathermap.org/data/2.5/forecast?q=atlantida&appid=5eba1bf17fdacafceb70f666362eb871 */
 
   return (
-    <div className="App">
+    <>
       <Navbar />
       <WeatherInfo />
-
-    </div>
+    </>
   );
 }
 

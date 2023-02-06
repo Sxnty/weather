@@ -1,0 +1,55 @@
+.hero__weather {
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  position: fixed;
+  height: 100vh;
+  padding: 2rem 1rem;
+  text-align: center;
+  background-color: $four-color;
+  gap: 1rem;
+.weather__title {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    h1 {
+        color: $strong-color;
+        font-size: 2rem;
+    }
+    h2 {
+        font-style: italic;
+        opacity: .8;
+    }
+}
+  i {
+    font-size: 10rem;
+    color: $base-color;
+  }
+  form {
+    display: flex;
+    place-content: center;
+    text-align: center;
+    position: relative;
+    input {
+      background-color: $third-color;
+      padding: 0.5rem 1rem;
+      border: none;
+      color: $base-color;
+    }
+  }
+  .weather__info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+
+    >div {
+        color: $strong-color;
+        background-color: $third-color;
+        border-radius: .25rem;
+        padding: .5rem;
+        display: flex;
+        flex-direction: column;
+        place-content: center;
+    }
+  }
+}
