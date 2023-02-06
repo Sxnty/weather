@@ -84,9 +84,20 @@ table {
   position: fixed;
   height: 100vh;
   padding: 2rem 1rem;
-  text-align: center;
   background-color: #EBC7E6;
   gap: 1rem;
+}
+.hero__weather button {
+  color: white;
+  background-color: #A084DC;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  transition: background 150ms;
+}
+.hero__weather button:hover {
+  background-color: #BFACE2;
+  cursor: pointer;
 }
 .hero__weather .weather__title {
   display: flex;
@@ -107,14 +118,13 @@ table {
 }
 .hero__weather form {
   display: flex;
-  place-content: center;
-  text-align: center;
-  position: relative;
 }
 .hero__weather form input {
-  background-color: #BFACE2;
-  padding: 0.5rem 1rem;
-  border: none;
+  background-color: transparent;
+  border: 1px solid #BFACE2;
+  border-radius: 0.15rem;
+  width: 70%;
+  padding: 0.5rem;
   color: #645CBB;
 }
 .hero__weather .weather__info {
@@ -123,6 +133,7 @@ table {
   gap: 1rem;
 }
 .hero__weather .weather__info > div {
+  text-align: center;
   color: #2c285a;
   background-color: #BFACE2;
   border-radius: 0.25rem;

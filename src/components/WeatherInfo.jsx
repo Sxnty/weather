@@ -61,9 +61,9 @@ function WeatherInfo() {
   };
   const gradesConverter = () => {
     if (info.grades === "metric") {
-      return "C";
+      return "Change to Farenheit";
     } else {
-      return "F";
+      return "Change to Celsius";
     }
   };
 
@@ -79,7 +79,7 @@ function WeatherInfo() {
         >
           <input
             type="text"
-            placeholder="City name..."
+            placeholder="search a city..."
             onChange={changeHandle}
           />
         </form>
