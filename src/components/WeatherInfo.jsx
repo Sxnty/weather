@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
+import DataToIcon from "./DataToIcon";
 import { useState } from "react";
-import { WiCloudy, WiDaySunny, WiDayHaze, WiShowers } from "react-icons/wi";
 import { MdSearch } from "react-icons/md";
 function WeatherInfo() {
   const [temp, setTemp] = useState("");
@@ -38,38 +38,7 @@ function WeatherInfo() {
     min: minTemp,
   };
 
-  const dataToIcon = () => {
-    switch (main) {
-      case "Clear":
-        return (
-          <i>
-            <WiDaySunny />
-          </i>
-        );
-        break;
-      case 'Clouds':
-      return (
-        <i>
-        <WiCloudy />
-      </i>
-      )
-      break;
-      case 'Haze':
-        return(
-          <i>
-          <WiDayHaze />
-        </i>
-        )
-        break;
-        case 'Rain':
-          return(
-            <i>
-            <WiShowers />
-          </i>
-          )
-          break;
-    }
-  };
+  
   useEffect(
     (city) => {
       fetchData(info.cityName, grades);
@@ -104,7 +73,7 @@ function WeatherInfo() {
             onChange={changeHandle}
           />
         </form>
-        {dataToIcon()}
+        <DataToIcon main={main}/>
           <div className="weather__title">
           <h1>{info.cityName}</h1>
         <h2>{info.description}</h2>
