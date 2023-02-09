@@ -84,7 +84,7 @@ table {
   position: fixed;
   height: 100vh;
   padding: 2rem 1rem;
-  background-color: #EBC7E6;
+  background-color: #fef2fe;
   gap: 1rem;
 }
 .hero__weather button {

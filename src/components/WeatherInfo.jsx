@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { WiCloudy } from "react-icons/wi";
+import { WiCloudy, WiDaySunny, WiDayHaze, WiShowers } from "react-icons/wi";
 import { MdSearch } from "react-icons/md";
 function WeatherInfo() {
   const [temp, setTemp] = useState("");
@@ -43,10 +43,31 @@ function WeatherInfo() {
       case "Clear":
         return (
           <i>
-            <WiCloudy />
+            <WiDaySunny />
           </i>
         );
         break;
+      case 'Clouds':
+      return (
+        <i>
+        <WiCloudy />
+      </i>
+      )
+      break;
+      case 'Haze':
+        return(
+          <i>
+          <WiDayHaze />
+        </i>
+        )
+        break;
+        case 'Rain':
+          return(
+            <i>
+            <WiShowers />
+          </i>
+          )
+          break;
     }
   };
   useEffect(
