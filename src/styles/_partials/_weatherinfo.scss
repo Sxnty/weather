@@ -1,11 +1,15 @@
+.hero {
+  display: flex;
+
+  height: 100vh;
+  position: fixed;
+}
 .hero__weather {
+  background-color: $four-color;
   display: flex;
   flex-direction: column;
   width: 25vw;
-  position: fixed;
-  height: 100vh;
   padding: 2rem 1rem;
-  background-color: $four-color;
   gap: 1rem;
   button {
     color: white;

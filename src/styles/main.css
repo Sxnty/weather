@@ -77,14 +77,18 @@ table {
   cursor: pointer;
 }
 
+.hero {
+  display: flex;
+  height: 100vh;
+  position: fixed;
+}
+
 .hero__weather {
+  background-color: #fef2fe;
   display: flex;
   flex-direction: column;
   width: 25vw;
-  position: fixed;
-  height: 100vh;
   padding: 2rem 1rem;
-  background-color: #fef2fe;
   gap: 1rem;
 }
 .hero__weather button {
