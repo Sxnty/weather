@@ -3,58 +3,10 @@
   font-family: "Open Sans", sans-serif;
 }
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+* {
   margin: 0;
   padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: "";
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+  box-sizing: border-box;
 }
 
 .header {
@@ -85,7 +37,6 @@ table {
   height: 100vh;
   /* background: url('https://cdn.discordapp.com/attachments/576208504226971648/1075117462258987158/lavender-poppies-field-sunny-flowers.png') no-repeat center;
   background-size: cover; */
-  background-color: #fef2fe;
 }
 
 .hero__weather {
@@ -120,7 +71,8 @@ table {
   font-style: italic;
   opacity: 0.8;
 }
-.hero__weather i {
+.hero__weather svg {
+  margin: auto;
   font-size: 10rem;
   color: #645CBB;
 }
@@ -168,7 +120,8 @@ table {
   place-content: center;
   text-align: center;
 }
-.hero__forecast .forecast__card i {
+.hero__forecast .forecast__card svg {
+  margin: auto;
   font-size: 6rem;
   color: #645CBB;
 }
@@ -181,4 +134,49 @@ table {
 }
 .hero__forecast .forecast__card span {
   color: #BFACE2;
+}
+
+@media screen and (max-width: 480px) {
+  .hero {
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  .hero .hero__weather {
+    flex-direction: column;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+  }
+  .hero .hero__weather form {
+    padding: 5rem 2rem 2rem 2rem;
+  }
+  .hero .hero__weather form input {
+    width: 100%;
+    margin: auto;
+  }
+  .hero .hero__weather .weather__title {
+    gap: 0;
+  }
+  .hero .hero__weather .weather__info {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem 0 1rem;
+  }
+  .hero .hero__weather .weather__info > div {
+    height: 100%;
+  }
+  .hero .hero__weather button {
+    width: 50%;
+    padding: 1rem;
+    margin: auto;
+  }
+  .hero .hero__forecast {
+    grid-template-columns: 1fr;
+    padding: 0;
+    padding: 1rem;
+  }
+  .hero .hero__forecast .forecast__card {
+    padding: 4rem;
+    background-color: #fef2fe;
+  }
 }/*# sourceMappingURL=main.css.map */

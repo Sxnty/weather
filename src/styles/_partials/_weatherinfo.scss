@@ -4,7 +4,7 @@ grid-template-columns: 1fr 4fr;
 height: 100vh;
 /* background: url('https://cdn.discordapp.com/attachments/576208504226971648/1075117462258987158/lavender-poppies-field-sunny-flowers.png') no-repeat center;
 background-size: cover; */
-background-color: $four-color;
+
 }
 .hero__weather {
   display: flex;
@@ -37,7 +37,8 @@ background-color: $four-color;
       opacity: 0.8;
     }
   }
-  i {
+ svg {
+  margin: auto;
     font-size: 10rem;
     color: $base-color;
   }

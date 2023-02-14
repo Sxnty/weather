@@ -14,7 +14,8 @@
         place-content: center;
         text-align: center;
         
-        i {
+        svg {
+            margin: auto;
             font-size: 6rem;
             color: $base-color;
         }
