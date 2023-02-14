@@ -4,14 +4,14 @@ import { CityContext } from "../context/CityContext";
 import DataToIcon from "./DataToIcon";
 import ForecastCard from "./ForecastCard";
 function Forecast() {
-  const { info, list, setList } = useContext(CityContext);
+  const { info, list, setList, setGrades } = useContext(CityContext);
 
   useEffect(() => {}, [list]);
 
   console.log(list);
   return (
     <>
-      <secition className="hero__forecast">
+      <section className="hero__forecast">
       {list.map((element) => {
         return (
           <div className="forecast__card" key={element.dt}>
@@ -22,7 +22,7 @@ function Forecast() {
           </div>
         );
       })}
-      </secition>
+      </section>
     </>
   );
 }

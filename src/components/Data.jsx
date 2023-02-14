@@ -22,9 +22,9 @@ function Data() {
   const [maxTemp, setMaxTemp] = useState("");
   const [minTemp, setMinTemp] = useState("");
 
-  const fetchFore = async () => {
+  const fetchFore = async (city, grades) => {
     const res = await fetch(
-      "https://api.openweathermap.org/data/2.5/forecast?q=Atlantida&appid=5eba1bf17fdacafceb70f666362eb871&units=metric&cnt=10"
+      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=5eba1bf17fdacafceb70f666362eb871&units=${grades}&cnt=10`
     );
     const data = await res.json();
     setList(data.list);
@@ -57,7 +57,7 @@ function Data() {
   useEffect(
     (city) => {
       fetchData(info.cityName, grades);
-      fetchFore();
+      fetchFore(info.cityName, grades);
     },
     [info.cityName, info.grades]
   );
