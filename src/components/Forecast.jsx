@@ -11,16 +11,18 @@ function Forecast() {
   console.log(list);
   return (
     <>
+      <secition className="hero__forecast">
       {list.map((element) => {
         return (
           <div className="forecast__card" key={element.dt}>
             <DataToIcon main={element.weather[0].main} />
             <h2>{element.main.temp}</h2>
             <p>{element.weather[0].description}</p>
-            <p>{element.dt_txt}</p>
+            <span>{element.dt_txt}</span>
           </div>
         );
       })}
+      </secition>
     </>
   );
 }

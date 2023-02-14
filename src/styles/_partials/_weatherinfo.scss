@@ -1,15 +1,16 @@
 .hero {
-  display: flex;
-
-  height: 100vh;
-  position: fixed;
+display: grid;
+grid-template-columns: 1fr 4fr;
+height: 100vh;
+/* background: url('https://cdn.discordapp.com/attachments/576208504226971648/1075117462258987158/lavender-poppies-field-sunny-flowers.png') no-repeat center;
+background-size: cover; */
+background-color: $four-color;
 }
 .hero__weather {
-  background-color: $four-color;
   display: flex;
+  background-color: white;
   flex-direction: column;
-  width: 25vw;
-  padding: 2rem 1rem;
+  padding:5rem 1rem;
   gap: 1rem;
   button {
     color: white;
@@ -42,7 +43,6 @@
   }
   form {
     display: flex;
-
     input {
         background-color: transparent;
         border: 1px solid $third-color;

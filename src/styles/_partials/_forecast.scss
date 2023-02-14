@@ -1,0 +1,32 @@
+.hero__forecast {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 2rem;
+    place-content: center;
+    place-content: center;
+    gap: 1rem;
+    .forecast__card {
+        background-color: white;
+        border-radius: .5rem;
+        padding: 4rem 0;
+        display: flex;
+        flex-direction: column;
+        place-content: center;
+        text-align: center;
+        
+        i {
+            font-size: 6rem;
+            color: $base-color;
+        }
+        h2 {
+            color: $strong-color;
+            font-size: 1.5rem;
+        }
+        p {
+            color: $second-color;
+        }
+        span {
+            color: $third-color;
+        }
+    }
+}

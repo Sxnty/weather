@@ -62,10 +62,12 @@ table {
   justify-content: space-between;
   background-color: #645CBB;
   color: white;
-  padding: 1rem;
+  position: absolute;
   font-size: 2rem;
+  width: 100%;
 }
 .header > div {
+  padding: 1rem;
   display: flex;
   gap: 0.5rem;
 }
@@ -78,17 +80,19 @@ table {
 }
 
 .hero {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
   height: 100vh;
-  position: fixed;
+  /* background: url('https://cdn.discordapp.com/attachments/576208504226971648/1075117462258987158/lavender-poppies-field-sunny-flowers.png') no-repeat center;
+  background-size: cover; */
+  background-color: #fef2fe;
 }
 
 .hero__weather {
-  background-color: #fef2fe;
   display: flex;
+  background-color: white;
   flex-direction: column;
-  width: 25vw;
-  padding: 2rem 1rem;
+  padding: 5rem 1rem;
   gap: 1rem;
 }
 .hero__weather button {
@@ -145,4 +149,36 @@ table {
   display: flex;
   flex-direction: column;
   place-content: center;
+}
+
+.hero__forecast {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 2rem;
+  place-content: center;
+  place-content: center;
+  gap: 1rem;
+}
+.hero__forecast .forecast__card {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  text-align: center;
+}
+.hero__forecast .forecast__card i {
+  font-size: 6rem;
+  color: #645CBB;
+}
+.hero__forecast .forecast__card h2 {
+  color: #2c285a;
+  font-size: 1.5rem;
+}
+.hero__forecast .forecast__card p {
+  color: #A084DC;
+}
+.hero__forecast .forecast__card span {
+  color: #BFACE2;
 }/*# sourceMappingURL=main.css.map */
