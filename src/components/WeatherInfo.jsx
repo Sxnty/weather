@@ -6,7 +6,7 @@ import { CityContext } from "../context/CityContext";
 function WeatherInfo() {
   const {newCity, setNewCity, setCityName, setGrades, info} = useContext(CityContext)
 
-
+  
   const changeHandle = (e) => {
     setNewCity(e.target.value);
   };
@@ -48,11 +48,11 @@ function WeatherInfo() {
         </div>
         <div>
           <p>Min temp</p>
-          <p>{info.minTemp}</p>
+          <p>{info.min}</p>
         </div>
         <div>
           <p>Max temp</p>
-          <p>{info.maxTemp}</p>
+          <p>{info.max}</p>
         </div>
       </div>
       <button

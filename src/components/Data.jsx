@@ -4,6 +4,14 @@ import { CityContext } from "../context/CityContext";
 import WeatherInfo from "./WeatherInfo";
 import Forecast from "./Forecast";
 function Data() {
+  const [list, setList] = useState([
+    {
+      dt: "Loading...",
+      main: { temp: "loading",},
+      weather: [{description:'loading', main:'loading'}]
+    },
+  ]);
+
   const [temp, setTemp] = useState("");
   const [main, setMain] = useState("");
   const [description, setDescription] = useState("");
@@ -13,6 +21,14 @@ function Data() {
   const [humidity, setHumidty] = useState("");
   const [maxTemp, setMaxTemp] = useState("");
   const [minTemp, setMinTemp] = useState("");
+
+  const fetchFore = async () => {
+    const res = await fetch(
+      "https://api.openweathermap.org/data/2.5/forecast?q=Atlantida&appid=5eba1bf17fdacafceb70f666362eb871&units=metric&cnt=10"
+    );
+    const data = await res.json();
+    setList(data.list);
+  };
 
   const fetchData = async (city, grades) => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${grades}&appid=5eba1bf17fdacafceb70f666362eb871`;
@@ -25,7 +41,6 @@ function Data() {
     setHumidty(data.main.humidity);
     setMaxTemp(data.main.temp_max);
     setMinTemp(data.main.temp_min);
-    console.log(data);
     return;
   };
   const info = {
@@ -42,13 +57,22 @@ function Data() {
   useEffect(
     (city) => {
       fetchData(info.cityName, grades);
+      fetchFore();
     },
     [info.cityName, info.grades]
   );
   return (
     <>
       <CityContext.Provider
-        value={{ newCity, setNewCity, setCityName, setGrades, info }}
+        value={{
+          newCity,
+          setNewCity,
+          setCityName,
+          setGrades,
+          info,
+          list,
+          setList,
+        }}
       >
         <main className="hero">
           <WeatherInfo />
