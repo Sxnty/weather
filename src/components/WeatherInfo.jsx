@@ -40,7 +40,7 @@ function WeatherInfo() {
       </div>
       <div className="weather__info">
         <div>
-          <p>{info.temp}</p>
+          <p>{Number(info.temp).toFixed(0)}</p>
         </div>
         <div>
           <p>Humidity</p>

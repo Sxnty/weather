@@ -7,8 +7,8 @@ function Data() {
   const [list, setList] = useState([
     {
       dt: "Loading...",
-      main: { temp: "loading",},
-      weather: [{description:'loading', main:'loading'}]
+      main: { temp: "loading" },
+      weather: [{ description: "loading", main: "loading" }],
     },
   ]);
 
@@ -23,25 +23,48 @@ function Data() {
   const [minTemp, setMinTemp] = useState("");
 
   const fetchFore = async (city, grades) => {
-    const res = await fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=5eba1bf17fdacafceb70f666362eb871&units=${grades}&cnt=10`
-    );
-    const data = await res.json();
-    setList(data.list);
+    try {
+      const res = await fetch(
+        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=5eba1bf17fdacafceb70f666362eb871&units=${grades}&cnt=10`
+      );
+      console.log(res)
+      const data = await res.json();
+      setList(data.list);
+    } catch (error) {
+      console.log(error);
+      setList([
+        {
+          dt: "Loading...",
+          main: { temp: "loading" },
+          weather: [{ description: "loading", main: "loading" }],
+        },
+      ]);
+    }
   };
 
   const fetchData = async (city, grades) => {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${grades}&appid=5eba1bf17fdacafceb70f666362eb871`;
-    const response = await fetch(url);
-    const data = await response.json();
-    setTemp(data.main.temp);
-    setMain(data.weather[0].main);
-    setDescription(data.weather[0].description);
-    setCityName(`${data.name}, ${data.sys.country}`);
-    setHumidty(data.main.humidity);
-    setMaxTemp(data.main.temp_max);
-    setMinTemp(data.main.temp_min);
-    return;
+    try {
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${grades}&appid=5eba1bf17fdacafceb70f666362eb871`;
+      const response = await fetch(url);
+      const data = await response.json();
+      setTemp(data.main.temp);
+      setMain(data.weather[0].main);
+      setDescription(data.weather[0].description);
+      setCityName(`${data.name}, ${data.sys.country}`);
+      setHumidty(data.main.humidity);
+      setMaxTemp(data.main.temp_max);
+      setMinTemp(data.main.temp_min);
+      return;
+    } catch (error) {
+      console.log(error);
+      setTemp("");
+      setMain("");
+      setDescription("");
+      setCityName("");
+      setHumidty("");
+      setMaxTemp("");
+      setMinTemp("");
+    }
   };
   const info = {
     temp: temp,

@@ -17,11 +17,10 @@ function Forecast() {
         return (
           <div className="forecast__card" key={element.dt}>
             <DataToIcon main={element.weather[0].main} />
-            <h2>{element.main.temp}</h2>
+            <h2>{Number(element.main.temp).toFixed(0)}</h2>
             <p>{element.weather[0].description}</p>
             <span>{moment(element.dt_txt).format('dddd')}</span>
             <span>{moment(element.dt_txt).format('HH:mm')}</span>
-
           </div>
         );
       })}
